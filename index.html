@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kainat Properties | Premium Real Estate in Pakistan</title>
+<meta name="description" content="Kainat Properties - Trusted real estate consultants for buying, selling & investing in premium properties across Pakistan." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  :root {
+    --navy: #0A1F44;
+    --navy-light: #142A5C;
+    --gold: #C9A961;
+    --gold-light: #E0C382;
+    --cream: #FAF7F0;
+    --white: #ffffff;
+    --gray: #6B7280;
+    --dark-gray: #1F2937;
+    --shadow-sm: 0 2px 8px rgba(10, 31, 68, 0.06);
+    --shadow-md: 0 8px 24px rgba(10, 31, 68, 0.10);
+    --shadow-lg: 0 20px 50px rgba(10, 31, 68, 0.15);
+    --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--dark-gray);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--navy); line-height: 1.2; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  ul { list-style: none; }
+
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== NAVBAR ===== */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    background: transparent;
+    transition: var(--transition);
+  }
+  .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    padding: 14px 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 700;
+    color: var(--white);
+    transition: var(--transition);
+  }
+  .navbar.scrolled .logo { color: var(--navy); }
+  .logo-icon {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--navy); font-size: 20px;
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+  }
+  .logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links a {
+    color: var(--white); font-weight: 500; font-size: 15px;
+    position: relative; transition: var(--transition);
+  }
+  .navbar.scrolled .nav-links a { color: var(--navy); }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -6px; left: 0;
+    width: 0; height: 2px; background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px; border-radius: 50px;
+    font-weight: 600; font-size: 15px;
+    cursor: pointer; border: none;
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55);
+  }
+  .btn-outline {
+    background: transparent; color: var(--white);
+    border: 2px solid rgba(255,255,255,0.5);
+  }
+  .btn-outline:hover {
+    background: var(--white); color: var(--navy);
+    border-color: var(--white);
+  }
+
+  .menu-toggle {
+    display: none; background: none; border: none;
+    font-size: 24px; color: var(--white); cursor: pointer;
+  }
+  .navbar.scrolled .menu-toggle { color: var(--navy); }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    background: linear-gradient(135deg, rgba(10,31,68,0.92), rgba(10,31,68,0.75)),
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center/cover;
+    padding: 120px 0 80px;
+  }
+  .hero-content { max-width: 720px; color: var(--white); }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201, 169, 97, 0.15);
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    color: var(--gold-light);
+    padding: 8px 18px; border-radius: 50px;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.5px; margin-bottom: 24px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(38px, 5.5vw, 64px);
+    font-weight: 700; margin-bottom: 24px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero h1 span { color: var(--gold); font-style: italic; }
+  .hero p {
+    font-size: 18px; color: rgba(255,255,255,0.85);
+    margin-bottom: 40px; max-width: 580px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-buttons {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== STATS ===== */
+  .stats {
+    background: var(--cream);
+    padding: 60px 0;
+    margin-top: -60px;
+    position: relative; z-index: 10;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 48px 32px;
+    box-shadow: var(--shadow-lg);
+  }
+  .stat-item { text-align: center; padding: 0 16px; border-right: 1px solid #E5E7EB; }
+  .stat-item:last-child { border-right: none; }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px; font-weight: 700;
+    color: var(--navy); line-height: 1;
+  }
+  .stat-number span { color: var(--gold); }
+  .stat-label {
+    font-size: 14px; color: var(--gray);
+    margin-top: 10px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+
+  /* ===== SECTION STYLES ===== */
+  section { padding: 100px 0; }
+  .section-header { text-align: center; max-width: 680px; margin: 0 auto 60px; }
+  .section-tag {
+    display: inline-block;
+    color: var(--gold); font-weight: 600;
+    font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  .section-header h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin-bottom: 18px;
+  }
+  .section-header p { color: var(--gray); font-size: 17px; }
+
+  /* ===== SERVICES ===== */
+  .services { background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid #EEF0F4;
+    border-radius: 18px;
+    padding: 40px 32px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, rgba(201,169,97,0.15), rgba(201,169,97,0.05));
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; color: var(--gold);
+    margin-bottom: 24px;
+    transition: var(--transition);
+  }
+  .service-card:hover .service-icon {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--white);
+    transform: rotate(-6deg) scale(1.05);
+  }
+  .service-card h3 { font-size: 22px; margin-bottom: 12px; }
+  .service-card p { color: var(--gray); font-size: 15px; }
+
+  /* ===== PROPERTIES ===== */
+  .properties { background: var(--cream); }
+  .prop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .prop-card {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  .prop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+  .prop-img {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+  }
+  .prop-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .prop-card:hover .prop-img img { transform: scale(1.08); }
+  .prop-tag {
+    position: absolute; top: 16px; left: 16px;
+    background: var(--gold); color: var(--navy);
+    padding: 6px 14px; border-radius: 50px;
+    font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .prop-body { padding: 24px; }
+  .prop-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; font-weight: 700;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .prop-title { font-size: 19px; margin-bottom: 10px; }
+  .prop-location {
+    display: flex; align-items: center; gap: 6px;
+    color: var(--gray); font-size: 14px; margin-bottom: 18px;
+  }
+  .prop-location i { color: var(--gold); }
+  .prop-features {
+    display: flex; gap: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #EEF0F4;
+    font-size: 14px; color: var(--gray);
+  }
+  .prop-features span {
+    display: flex; align-items: center; gap: 6px;
+  }
+  .prop-features i { color: var(--gold); }
+
+  /* ===== WHY US ===== */
+  .why { background: var(--white); }
+  .why-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .why-img {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .why-img img { width: 100%; height: 520px; object-fit: cover; }
+  .why-badge {
+    position: absolute; bottom: 24px; right: 24px;
+    background: var(--white);
+    padding: 20px 26px; border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+  .why-badge .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700;
+    color: var(--gold); line-height: 1;
+  }
+  .why-badge .txt {
+    font-size: 12px; color: var(--gray);
+    margin-top: 6px; text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .why-content h2 { font-size: clamp(30px, 4vw, 42px); margin-bottom: 20px; }
+  .why-content > p { color: var(--gray); margin-bottom: 32px; font-size: 16px; }
+  .why-list { display: flex; flex-direction: column; gap: 22px; }
+  .why-item { display: flex; gap: 18px; }
+  .why-check {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, rgba(201,169,97,0.15), rgba(201,169,97,0.05));
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 18px;
+  }
+  .why-item h4 { font-size: 17px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .why-item p { color: var(--gray); font-size: 14px; }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials { background: var(--navy); color: var(--white); }
+  .testimonials .section-header h2 { color: var(--white); }
+  .testimonials .section-header p { color: rgba(255,255,255,0.7); }
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .test-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 36px 32px;
+    transition: var(--transition);
+  }
+  .test-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-6px);
+    border-color: rgba(201,169,97,0.4);
+  }
+  .test-stars { color: var(--gold); margin-bottom: 18px; font-size: 14px; }
+  .test-text {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px; line-height: 1.7;
+    margin-bottom: 26px; font-style: italic;
+  }
+  .test-author { display: flex; align-items: center; gap: 14px; }
+  .test-avatar {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--navy);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+  }
+  .test-author h5 { color: var(--white); font-size: 15px; font-weight: 600; font-family: 'Inter', sans-serif; }
+  .test-author span { color: var(--gold); font-size: 13px; }
+
+  /* ===== CTA ===== */
+  .cta {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta::before {
+    content: '';
+    position: absolute; top: -50%; right: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,169,97,0.15), transparent 70%);
+    border-radius: 50%;
+  }
+  .cta h2 { color: var(--white); font-size: clamp(28px, 4vw, 42px); margin-bottom: 16px; position: relative; }
+  .cta p { color: rgba(255,255,255,0.75); font-size: 17px; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; position: relative; }
+  .cta .btn-primary { position: relative; }
+
+  /* ===== CONTACT ===== */
+  .contact { background: var(--cream); }
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+  }
+  .contact-info h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 18px; }
+  .contact-info > p { color: var(--gray); margin-bottom: 36px; }
+  .contact-item {
+    display: flex; gap: 18px;
+    margin-bottom: 26px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  .contact-item:hover { transform: translateX(6px); box-shadow: var(--shadow-md); }
+  .contact-icon {
+    flex-shrink: 0;
+    width: 50px; height: 50px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 20px;
+  }
+  .contact-item h5 { font-size: 15px; font-weight: 600; margin-bottom: 4px; font-family: 'Inter', sans-serif; }
+  .contact-item p { color: var(--gray); font-size: 14px; }
+
+  .contact-form {
+    background: var(--white);
+    padding: 44px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+  }
+  .contact-form h3 { font-size: 26px; margin-bottom: 8px; }
+  .contact-form > p { color: var(--gray); font-size: 15px; margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block; font-size: 13px; font-weight: 600;
+    color: var(--navy); margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--dark-gray);
+    transition: var(--transition);
+    background: #F9FAFB;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(201,169,97,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .contact-form .btn-primary { width: 100%; justify-content: center; padding: 16px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 70px 0 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 50px;
+  }
+  .footer-brand .logo { color: var(--white); margin-bottom: 20px; }
+  .footer-brand p { font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
+  .social-links { display: flex; gap: 12px; }
+  .social-links a {
+    width: 40px; height: 40px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white);
+    transition: var(--transition);
+  }
+  .social-links a:hover {
+    background: var(--gold); color: var(--navy);
+    transform: translateY(-4px);
+  }
+  .footer-col h4 {
+    color: var(--white); font-size: 16px;
+    margin-bottom: 22px; font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul a {
+    font-size: 14px;
+    transition: var(--transition);
+  }
+  .footer-col ul a:hover { color: var(--gold); padding-left: 5px; }
+  .footer-col ul li i { color: var(--gold); margin-right: 8px; font-size: 13px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 24px 0;
+    text-align: center;
+    font-size: 13px;
+  }
+  .footer-bottom a { color: var(--gold); }
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .whatsapp-float {
+    position: fixed; bottom: 28px; right: 28px;
+    width: 60px; height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-size: 30px;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: var(--transition);
+    animation: pulse 2s infinite;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 992px) {
+    .nav-links {
+      position: fixed; top: 0; right: -100%;
+      height: 100vh; width: 280px;
+      background: var(--white);
+      flex-direction: column;
+      justify-content: center;
+      transition: right 0.4s ease;
+      box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+    }
+    .nav-links.active { right: 0; }
+    .nav-links a { color: var(--navy) !important; font-size: 18px; }
+    .menu-toggle { display: block; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; padding: 40px 24px; }
+    .stat-item { border-right: none; }
+    .services-grid, .prop-grid, .test-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-inner { grid-template-columns: 1fr; gap: 48px; }
+    .why-img img { height: 400px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 640px) {
+    section { padding: 70px 0; }
+    .services-grid, .prop-grid, .test-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .hero { padding: 100px 0 60px; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; justify-content: center; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form { padding: 28px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { font-size: 12px; }
+    .why-badge { padding: 14px 18px; }
+    .why-badge .num { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-building-columns"></i></div>
+      Kainat<span>Properties</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#properties">Properties</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary" style="display:none" id="navBtn">Get in Touch</a>
+    <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-award"></i> Trusted Real Estate Consultants in Pakistan
+      </div>
+      <h1>Find Your <span>Dream Property</span> With Confidence</h1>
+      <p>Kainat Properties connects you with premium residential and commercial real estate opportunities. From buying and selling to investment advisory — we make property simple, transparent, and rewarding.</p>
+      <div class="hero-buttons">
+        <a href="#properties" class="btn btn-primary">
+          <i class="fa-solid fa-house"></i> Explore Properties
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fa-solid fa-phone"></i> Free Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="500"><span>0</span>+</div>
+        <div class="stat-label">Properties Sold</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="1200"><span>0</span>+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="15"><span>0</span>+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="50"><span>0</span>+</div>
+        <div class="stat-label">Prime Locations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Our Services</span>
+      <h2>Complete Real Estate Solutions</h2>
+      <p>Whether you're buying your first home, selling an investment property, or expanding your portfolio — we're here for every step.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
+        <h3>Buy Property</h3>
+        <p>Discover handpicked homes, apartments, and plots in the most sought-after locations across Pakistan.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+        <h3>Sell Property</h3>
+        <p>Get the best market value for your property with our expert valuation and wide buyer network.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Investment Advisory</h3>
+        <p>Make smart investment decisions with data-driven insights and expert market analysis.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+        <h3>Commercial Spaces</h3>
+        <p>Offices, shops, and commercial plots strategically located for maximum business growth.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+        <h3>Legal & Documentation</h3>
+        <p>End-to-end legal support for property transfers, registries, and documentation — 100% hassle-free.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-key"></i></div>
+        <h3>Rental Services</h3>
+        <p>Find reliable tenants or the perfect rental home with our verified listings and tenant screening.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTIES -->
+<section class="properties" id="properties">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Featured Listings</span>
+      <h2>Premium Properties Available</h2>
+      <p>Explore our curated selection of residential and commercial properties in Pakistan's top locations.</p>
+    </div>
+    <div class="prop-grid">
+      <div class="prop-card reveal">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" alt="Luxury Villa">
+          <span class="prop-tag">For Sale</span>
+        </div>
+        <div class="prop-body">
+          <div class="prop-price">PKR 4.5 Crore</div>
+          <h3 class="prop-title">Modern Luxury Villa</h3>
+          <div class="prop-location"><i class="fa-solid fa-location-dot"></i> DHA Phase 6, Lahore</div>
+          <div class="prop-features">
+            <span><i class="fa-solid fa-bed"></i> 5 Beds</span>
+            <span><i class="fa-solid fa-bath"></i> 6 Baths</span>
+            <span><i class="fa-solid fa-vector-square"></i> 1 Kanal</span>
+          </div>
+        </div>
+      </div>
+      <div class="prop-card reveal">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Luxury Apartment">
+          <span class="prop-tag">For Sale</span>
+        </div>
+        <div class="prop-body">
+          <div class="prop-price">PKR 1.8 Crore</div>
+          <h3 class="prop-title">Elegant City Apartment</h3>
+          <div class="prop-location"><i class="fa-solid fa-location-dot"></i> Bahria Town, Islamabad</div>
+          <div class="prop-features">
+            <span><i class="fa-solid fa-bed"></i> 3 Beds</span>
+            <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+            <span><i class="fa-solid fa-vector-square"></i> 1800 sqft</span>
+          </div>
+        </div>
+      </div>
+      <div class="prop-card reveal">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Family Home">
+          <span class="prop-tag">For Rent</span>
+        </div>
+        <div class="prop-body">
+          <div class="prop-price">PKR 2.5 Lakh<span style="font-size:14px;color:#6B7280">/month</span></div>
+          <h3 class="prop-title">Spacious Family Home</h3>
+          <div class="prop-location"><i class="fa-solid fa-location-dot"></i> Gulberg III, Lahore</div>
+          <div class="prop-features">
+            <span><i class="fa-solid fa-bed"></i> 4 Beds</span>
+            <span><i class="fa-solid fa-bath"></i> 4 Baths</span>
+            <span><i class="fa-solid fa-vector-square"></i> 10 Marla</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-img reveal">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Why Choose Kainat Properties">
+        <div class="why-badge">
+          <div class="num">15+</div>
+          <div class="txt">Years of Trust</div>
+        </div>
+      </div>
+      <div class="why-content reveal">
+        <span class="section-tag">Why Choose Us</span>
+        <h2>Your Trusted Partner in Real Estate</h2>
+        <p>At Kainat Properties, we don't just sell properties — we build lasting relationships based on trust, transparency, and results.</p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-check"><i class="fa-solid fa-check"></i></div>
+            <div>
+              <h4>Verified & Legal Properties</h4>
+              <p>Every listing is thoroughly vetted for legal clearance and authenticity.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><i class="fa-solid fa-check"></i></div>
+            <div>
+              <h4>Expert Market Knowledge</h4>
+              <p>15+ years of experience across Pakistan's most dynamic real estate markets.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><i class="fa-solid fa-check"></i></div>
+            <div>
+              <h4>Transparent Pricing</h4>
+              <p>No hidden fees, no surprises — just honest, market-driven pricing.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><i class="fa-solid fa-check"></i></div>
+            <div>
+              <h4>End-to-End Support</h4>
+              <p>From first viewing to final handover, we handle everything for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" style="color:var(--gold)">Client Reviews</span>
+      <h2>What Our Clients Say</h2>
+      <p>Real stories from real people who found their perfect property with us.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="test-text">"Kainat Properties made my home buying journey incredibly smooth. Their team was professional, responsive, and truly understood what I was looking for. Highly recommended!"</p>
+        <div class="test-author">
+          <div class="test-avatar">A</div>
+          <div>
+            <h5>Ahmed Raza</h5>
+            <span>Home Buyer, Lahore</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="test-text">"I sold my property within 3 weeks at a great price. Their market analysis was spot-on and the entire process was transparent from start to finish."</p>
+        <div class="test-author">
+          <div class="test-avatar">S</div>
+          <div>
+            <h5>Sana Malik</h5>
+            <span>Property Seller, Islamabad</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="test-text">"As a first-time investor, I was nervous. Their advisory team guided me through every option and helped me pick a property that's already appreciating. Fantastic service!"</p>
+        <div class="test-author">
+          <div class="test-avatar">H</div>
+          <div>
+            <h5>Hassan Ali</h5>
+            <span>Investor, Karachi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Find Your Perfect Property?</h2>
+    <p>Let our experts help you make the right move. Book a free consultation today.</p>
+    <a href="#contact" class="btn btn-primary">
+      <i class="fa-solid fa-calendar-check"></i> Book Free Consultation
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Let's Discuss Your Property Needs</h2>
+        <p>Have a question about a property or need expert advice? Reach out to us — we respond within 24 hours.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <h5>Call Us</h5>
+            <p>+92 314 514 2629</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <h5>Email Us</h5>
+            <p>info@**********.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h5>Visit Office</h5>
+            <p>Main Boulevard, Lahore, Pakistan</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <h3>Send Us a Message</h3>
+        <p>Fill out the form and our team will get back to you shortly.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" required placeholder="+92 314 514 2629" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" required placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label>I'm Interested In</label>
+          <select required>
+            <option value="">Select a service</option>
+            <option>Buying Property</option>
+            <option>Selling Property</option>
+            <option>Investment Advisory</option>
+            <option>Rental Services</option>
+            <option>Commercial Space</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea required placeholder="Tell us about your requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building-columns"></i></div>
+          Kainat<span>Properties</span>
+        </div>
+        <p>Your trusted real estate partner in Pakistan. We help you buy, sell, and invest in premium properties with confidence and clarity.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#properties">Properties</a></li>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Buy Property</a></li>
+          <li><a href="#">Sell Property</a></li>
+          <li><a href="#">Investment Advisory</a></li>
+          <li><a href="#">Rental Services</a></li>
+          <li><a href="#">Commercial Spaces</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fa-solid fa-location-dot"></i> Main Boulevard, Lahore</li>
+          <li><i class="fa-solid fa-phone"></i> +92 314 514 2629</li>
+          <li><i class="fa-solid fa-envelope"></i> info@**********.com</li>
+          <li><i class="fa-solid fa-clock"></i> Mon - Sat: 9AM - 8PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 <a href="#">Kainat Properties</a>. All rights reserved. | Designed with <i class="fa-solid fa-heart" style="color:var(--gold)"></i> in Pakistan
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/923145142629" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const icon = menuToggle.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuToggle.querySelector('i').classList.add('fa-bars');
+      menuToggle.querySelector('i').classList.remove('fa-times');
+    });
+  });
+
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Animated counters
+  const counters = document.querySelectorAll('.stat-number');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = +el.dataset.target;
+        const span = el.querySelector('span');
+        let count = 0;
+        const step = target / 60;
+        const update = () => {
+          count += step;
+          if (count < target) {
+            span.textContent = Math.ceil(count);
+            requestAnimationFrame(update);
+          } else {
+            span.textContent = target;
+          }
+        };
+        update();
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+    btn.style.background = 'linear-gradient(135deg, #10B981, #34D399)';
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
